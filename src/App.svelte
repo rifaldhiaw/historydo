@@ -3,22 +3,23 @@
   import List from "./pages/List.svelte";
   import Navbar from "./components/Navbar.svelte";
 
-  let currentPage = "home";
+  import { NAV } from "./utils/constant";
 
-  function handleChangeTab(event) {
-    console.log(event);
-    currentPage = event.detail.value;
+  let currentNav = NAV.HOME;
+
+  function handleChangeNav(event) {
+    currentNav = event.detail.value;
   }
 </script>
 
 <main class="mb-48 ">
-  {#if currentPage == 'home'}
+  {#if currentNav == NAV.HOME}
     <Home />
-  {:else if currentPage == 'list'}
+  {:else if currentNav == NAV.LIST}
     <List />
   {:else}
     <div />
   {/if}
 </main>
 
-<Navbar on:changeTab={handleChangeTab} />
+<Navbar on:changeNav={handleChangeNav} {currentNav} />

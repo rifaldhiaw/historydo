@@ -6,11 +6,15 @@
   import NavbarButton from "./NavbarButton.svelte";
   import { createEventDispatcher } from "svelte";
 
+  import { NAV } from "../utils/constant";
+
   const dispatch = createEventDispatcher();
 
-  function changeTab(tab) {
+  export let currentNav = NAV.HOME;
+
+  function changeNav(tab) {
     return function() {
-      dispatch("changeTab", {
+      dispatch("changeNav", {
         value: tab
       });
     };
@@ -21,7 +25,16 @@
   class="w-full fixed bottom-0 left-0 bg-white shadow-md border-t-2
   border-gray-300 flex items-center">
 
-  <NavbarButton icon={faHome} on:click={changeTab('home')} />
-  <NavbarButton icon={faLayerGroup} on:click={changeTab('list')} />
-  <NavbarButton icon={faCalendarWeek} on:click={changeTab('history')} />
+  <NavbarButton
+    isActive={currentNav === NAV.HOME}
+    icon={faHome}
+    on:click={changeNav(NAV.HOME)} />
+  <NavbarButton
+    isActive={currentNav === NAV.LIST}
+    icon={faLayerGroup}
+    on:click={changeNav(NAV.LIST)} />
+  <NavbarButton
+    isActive={currentNav === NAV.HISTORY}
+    icon={faCalendarWeek}
+    on:click={changeNav(NAV.HISTORY)} />
 </div>
