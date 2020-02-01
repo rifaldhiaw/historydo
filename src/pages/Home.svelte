@@ -1,6 +1,6 @@
 <script>
   import TodoCard from "../components/TodoCard.svelte";
-  import TodoInput from "../components/TodoInput.svelte";
+  import ListSwitcher from "../components/ListSwitcher.svelte";
 </script>
 
 <style>
@@ -28,10 +28,16 @@
 </section>
 
 <section class="mb-5">
-  <h2>Todo</h2>
+  <h2>Today</h2>
   <TodoCard />
   <TodoCard />
   <TodoCard />
+  <div class="flex py-2 px-3 bg-white items-center">
+    <input
+      type="text"
+      class="bg-gray-100 border border-gray-400 rounded-lg cursor-text w-full
+      h-8 mx-2" />
+  </div>
 </section>
 
 <section class="mb-5">
@@ -39,12 +45,12 @@
   <TodoCard />
   <TodoCard />
   <TodoCard />
-  <TodoCard />
-  <TodoCard />
-  <TodoCard />
-  <TodoCard />
-  <TodoCard />
-  <TodoCard />
+  <div class="flex py-2 px-3 bg-white items-center">
+    <input
+      type="text"
+      class="bg-gray-100 border border-gray-400 rounded-lg cursor-text w-full
+      h-8 mx-2" />
+  </div>
 </section>
 
-<TodoInput />
+<ListSwitcher />

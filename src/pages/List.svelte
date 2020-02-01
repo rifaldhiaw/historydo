@@ -1,44 +1,52 @@
 <script>
   import TodoCard from "../components/TodoCard.svelte";
   import ListSwitcher from "../components/ListSwitcher.svelte";
+  import ProjectCard from "../components/ProjectCard.svelte";
+  import Card from "../components/base/Card.svelte";
+  import OptionIcon from "../components/icons/option.svelte";
+
+  function onClickFunc() {
+    alert("on click option in project detail");
+  }
 </script>
 
-<style>
-  .w-half {
-    width: 50%;
-  }
-</style>
+<div class="flex justify-between items-center mb-5 px-2">
+  <h1>Project 1</h1>
+  <OptionIcon on:click={onClickFunc} />
+</div>
 
-<section class="mb-5">
-  <h2>Resource</h2>
-  <div class="flex flex-wrap">
-    <div class="w-half p-1">
-      <div class="py-2 px-2 bg-white w-full">Link 1</div>
-    </div>
-    <div class="w-half p-1">
-      <div class="py-2 px-2 bg-white w-full">Link 1</div>
-    </div>
-    <div class="w-half p-1">
-      <div class="py-2 px-2 bg-white w-full">Link 1</div>
-    </div>
-    <div class="w-half p-1">
-      <div class="py-2 px-2 bg-white w-full">Link 1</div>
-    </div>
-  </div>
-</section>
+<div class="mb-5">
+  <Card name="Todo">
+    <TodoCard />
+    <TodoCard />
+    <TodoCard />
+  </Card>
+</div>
 
-<section class="mb-5">
-  <h2>Todo</h2>
-  <TodoCard />
-  <TodoCard />
-  <TodoCard />
-</section>
+<div class="mb-5">
+  <Card name="Habit">
+    <TodoCard />
+    <TodoCard />
+  </Card>
+</div>
 
-<section class="mb-5">
-  <h2>Inbox</h2>
-  <TodoCard />
-  <TodoCard />
-  <TodoCard />
-</section>
+<div class="mb-5">
+  <Card name="Note">
+    <div class="p-2 pb-5">
+      <h2>It is my note here</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        aut libero placeat explicabo odio ut beatae, dolore ex aliquam vitae,
+        necessitatibus minima non quis doloribus optio ipsum dicta veniam dolor.
+      </p>
 
-<ListSwitcher />
+      <br />
+      <br />
+      <ul>
+        <li>hello 1</li>
+        <li>hello 2</li>
+        <li>hemm is it?</li>
+      </ul>
+    </div>
+  </Card>
+</div>

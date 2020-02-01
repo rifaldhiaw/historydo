@@ -1,24 +1,14 @@
 <script>
-  import { faHome } from "@fortawesome/free-solid-svg-icons/faHome";
-  import { faCalendarWeek } from "@fortawesome/free-solid-svg-icons/faCalendarWeek";
   import { faLayerGroup } from "@fortawesome/free-solid-svg-icons/faLayerGroup";
+  import { faCalendarWeek } from "@fortawesome/free-solid-svg-icons/faCalendarWeek";
+  import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 
   import NavbarButton from "./NavbarButton.svelte";
   import { createEventDispatcher } from "svelte";
 
   import { NAV } from "../utils/constant";
 
-  const dispatch = createEventDispatcher();
-
   export let currentNav = NAV.HOME;
-
-  function changeNav(tab) {
-    return function() {
-      dispatch("changeNav", {
-        value: tab
-      });
-    };
-  }
 </script>
 
 <div
@@ -27,14 +17,14 @@
 
   <NavbarButton
     isActive={currentNav === NAV.HOME}
-    icon={faHome}
-    on:click={changeNav(NAV.HOME)} />
+    icon={faCalendarWeek}
+    path="/" />
   <NavbarButton
     isActive={currentNav === NAV.LIST}
     icon={faLayerGroup}
-    on:click={changeNav(NAV.LIST)} />
+    path="/project" />
   <NavbarButton
     isActive={currentNav === NAV.HISTORY}
-    icon={faCalendarWeek}
-    on:click={changeNav(NAV.HISTORY)} />
+    icon={faUser}
+    path="/account" />
 </div>

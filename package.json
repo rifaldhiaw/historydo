@@ -6,14 +6,16 @@
     "build:tailwind": "NODE_ENV=production postcss public/tailwind.css -o public/index.css",
     "build": "npm run build:tailwind && rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "sirv public --single --host 0.0.0.0"
   },
   "devDependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fullhuman/postcss-purgecss": "^2.0.5",
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "easymde": "^2.9.0",
     "fa-svelte": "^3.1.0",
+    "page": "^1.11.5",
     "postcss": "^7.0.26",
     "postcss-cli": "^7.1.0",
     "postcss-load-config": "^2.1.0",

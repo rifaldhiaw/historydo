@@ -2,13 +2,14 @@
   import Icon from "fa-svelte";
 
   export let icon;
-  export let isActive = false;
+  export let isActive = falsei;
+  export let path = "/";
 
-  $: activeStyle = isActive ? " text-blue-600" : "text-gray-600";
+  $: activeStyle = isActive ? " text-gray-700" : "text-gray-500";
 </script>
 
-<div
-  class={'flex justify-center items-center cursor-pointer h-16 flex-1 ' + activeStyle}
-  on:click>
+<a
+  href={path}
+  class={'flex justify-center items-center cursor-pointer h-16 flex-1 ' + activeStyle}>
   <Icon {icon} class="text-3xl" />
-</div>
+</a>
