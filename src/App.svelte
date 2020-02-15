@@ -2,7 +2,6 @@
   import router from "page";
 
   import Home from "./pages/Home.svelte";
-  import List from "./pages/List.svelte";
   import Project from "./pages/project/Project.svelte";
 
   import Navbar from "./components/Navbar.svelte";
@@ -23,7 +22,7 @@
     currentNav = NAV.LIST;
   });
   router("/account", () => {
-    page = List;
+    page = Home;
     currentNav = NAV.HISTORY;
   });
   router("*", () => {

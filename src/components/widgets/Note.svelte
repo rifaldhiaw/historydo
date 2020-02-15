@@ -5,13 +5,21 @@
   import Check from "../../components/icons/Check.svelte";
   import showdown from "showdown";
 
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
   export let value = "";
   let isEdit = false;
   let converter = new showdown.Converter();
   $: htmlValue = converter.makeHtml(value);
 
   const handleClick = () => alert("on click card option");
-  const handleEdit = () => (isEdit = !isEdit);
+  const handleEdit = () => {
+    isEdit = !isEdit;
+    if (!isEdit) {
+      dispatch("change", value);
+    }
+  };
   const handleChange = e => {
     value = e.detail;
   };

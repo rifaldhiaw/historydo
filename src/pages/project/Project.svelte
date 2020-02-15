@@ -6,7 +6,7 @@
 </script>
 
 {#if params.id}
-  <ProjectDetail />
+  <ProjectDetail id={params.id} />
 {:else}
   <ProjectList />
 {/if}
