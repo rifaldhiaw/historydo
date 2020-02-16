@@ -6,7 +6,8 @@
     "build:tailwind": "NODE_ENV=production postcss public/tailwind.css -o public/index.css",
     "build": "npm run build:tailwind && rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --single --host 0.0.0.0"
+    "start": "sirv public --single --host 0.0.0.0",
+    "deploy": "npm run build && firebase deploy"
   },
   "devDependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
@@ -25,9 +26,11 @@
     "rollup-plugin-terser": "^5.1.2",
     "showdown": "^1.9.1",
     "svelte": "^3.0.0",
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.1.4",
+    "sveltefire": "^0.1.1"
   },
   "dependencies": {
+    "firebase": "^7.8.2",
     "sirv-cli": "^0.4.4"
   }
 }

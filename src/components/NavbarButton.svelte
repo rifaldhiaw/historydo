@@ -10,6 +10,6 @@
 
 <a
   href={path}
-  class={'flex justify-center items-center cursor-pointer h-16 flex-1 ' + activeStyle}>
-  <Icon {icon} class="text-3xl" />
+  class={'flex justify-center items-center cursor-pointer h-12 flex-1 ' + activeStyle}>
+  <Icon {icon} class="text-2xl" />
 </a>
